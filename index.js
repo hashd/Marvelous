@@ -94,7 +94,7 @@ app.on('ready', function() {
     icon: 'app/img/marvelous.png',
     title: 'Marvelous'
   });
-  mainWindow.maximize(true);
+  //mainWindow.maximize(true);
 
  	mainWindow.setMenu(Menu.buildFromTemplate(mainMenu(mainWindow)));
 

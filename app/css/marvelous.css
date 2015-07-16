@@ -43,6 +43,7 @@ body.container {
 .module-header {
   background: #f5f5f5;
   border-bottom: 1px solid #ddd;
+  padding-top: 36px;
 }
 
 .module-header h3 {
@@ -134,6 +135,8 @@ body.container {
 #tab-bar {
   padding: 0;
   background: #333;
+  position: fixed;
+  width: 100%;
 }
 
 .md-editor>textarea {
@@ -182,3 +185,13 @@ body.container {
   color: #444;
 }
 
+.editor-statusbar {
+  padding: 4px 10px;
+  font-size: 12px;
+  color: #959694;
+  position: fixed;
+  text-align: right;
+  bottom: 0;
+  background-color: #333;
+  width: 100%;
+}

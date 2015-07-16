@@ -1809,7 +1809,7 @@
 	},
 
 	onKeyPress: function(e) {
-	  e.preventDefault();
+	  //e.preventDefault();
 	  operation(this.cm, applyTextInput)(this.cm, String.fromCharCode(e.charCode == null ? e.keyCode : e.charCode), 0);
 	},
 
@@ -12886,25 +12886,23 @@ SimpleMDE.prototype.render = function(el) {
 	keyMaps["Enter"] = "newlineAndIndentContinueMarkdownList";
 	keyMaps['Tab'] = 'tabAndIndentContinueMarkdownList';
 	keyMaps['Shift-Tab'] = 'shiftTabAndIndentContinueMarkdownList';
+	keyMaps['F11'] = function (cm) {
+		cm.setOption("fullscreen", !cm.getOption("fullscreen"));
+	};
+	keyMaps['Esc'] = function (cm) {
+		if (cm.getOption("fullscreen"), cm.getOption("fullscreen", false));
+	};
 
 	this.codemirror = CodeMirror.fromTextArea(el, {
 		mode: 'markdown',
-		theme: 'paper',
+		theme: 'xq-light',
 		tabSize: (options.tabSize != undefined) ? options.tabSize : 2,
 		indentWithTabs: (options.indentWithTabs === false) ? false : true,
 		lineNumbers: false,
 		autofocus: (options.autofocus === true) ? true : false,
 		extraKeys: keyMaps,
 		lineWrapping: (options.lineWrapping === false) ? false : true,
-		scrollbarStyle: "overlay",
-		extraKeys: {
-	        "F11": function(cm) {
-	          cm.setOption("fullScreen", !cm.getOption("fullScreen"));
-	        },
-	        "Esc": function(cm) {
-	          if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
-	        }
-	      }
+		scrollbarStyle: "overlay"
 	});
 
 	if (options.toolbar !== false) {
