@@ -126,6 +126,9 @@
 	display: inline-block;
 	min-width: 4em;
 	margin-left: 1em;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-shadow: 0 -1px 0 #000;
 }
 
 .editor-statusbar .lines:before {
